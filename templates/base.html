@@ -1,3 +1,4 @@
+{#뷰와 템플릿 연결하기#}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,14 +6,28 @@
 
 <body style="font-family: 'NanumSquareR'">
 
+{#<h1>Hello World</h1> # 뷰에서 구현하기 위해 accountapp파일의 view 창의 내용 변경하기#}
+
 {% include 'header.html' %}
+{#구분선 넣는 태그#}
 <hr>
+
+{% for message in messages %}
+    <div class="text-center">
+        <div class="btn btn-success rounded-pill px-5">
+            {{ message }}
+        </div>
+
+    </div>
+{% endfor %}
 
 {% block content %}
 {% endblock %}
 
+
+
 <hr>
 {% include 'footer.html' %}
-
 </body>
+
 </html>
